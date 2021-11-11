@@ -5,9 +5,9 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
    
-
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -30,10 +30,13 @@
 
     });//then
   } //signout
-     document.write("<html><head></head><body><table><tr><td> Correo </td><td>"+profile.getEmail()+"</td></tr><tr><td>Foto</td><td><image src='"+profile.getImageUrl()+"'></td></tr></table></body></html>");    
+     document.write("<table><tr><td> Correo </td><td>"+profile.getEmail()+"</td></tr><tr><td>Foto</td><td><image src='"+profile.getImageUrl()+"'></td></tr><tr><td></td></tr></table>");    
       }//if
+      else {Document.write("Debe Registrar una cuenta google valida");}
     }
     </script>
-    
-  </body>
+  
+
+   
+ </body>
 </html>

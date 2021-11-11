@@ -1,0 +1,32 @@
+{
+    "usuarios": {
+        "usuario": [{
+                "id": "1",
+                "nombre": "Juan",
+                "correo": "ivandavid6084@gmail.com",
+                "permiso": {
+                    "id": "1",
+                    "rol": "admin"
+                }
+            },
+            {
+                "id": "2",
+                "nombre": "Fernando",
+                "correo": "fdurgam@gmail.com",
+                "permiso": {
+                    "id": "2",
+                    "rol": "usuario"
+                }
+            },
+            {
+                "id": "3",
+                "nombre": "Gabriela",
+                "correo": "gabrielaedelmiravilla601@gmail.com",
+                "permiso": {
+                    "id": "3",
+                    "rol": "usuario"
+                }
+            }
+        ]
+    }
+}

@@ -248,3 +248,19 @@ h2 {
 .footer {
     text-align: center;
 }
+@media(max-width:400px){
+    #cuerpo{
+        background-color: var(--gris);
+        color: var(--oscuro);
+
+    }
+}
+body .titulo,.capitulo{
+    background-color: var(--primario);
+    color:var(--secundario);
+}
+body .enlace{
+    text-decoration: none;
+    color:var(--blanco);
+    background-color: var(--oscuro);
+}
