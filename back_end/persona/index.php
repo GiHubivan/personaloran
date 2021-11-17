@@ -1,6 +1,8 @@
 <?php session_start();?>
 <html lang="es">
 <head>
+<link rel=" stylesheet " href=" http://personaloran/front_end/css/estilos.css ">
+
 		<!-- Datatable CSS -->
 <link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
 

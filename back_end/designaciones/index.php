@@ -1,6 +1,8 @@
 <?php session_start();?>
 <html lang="es">
 <head>
+<link rel=" stylesheet " href=" http://personaloran/front_end/css/estilos.css ">
+ 
 		<!-- Datatable CSS -->
 <link href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
 
@@ -49,11 +51,14 @@
                                         <tr>
 	  
                                         <th>numero de resolucion</th>
-	                                    <th></th>
-                                        <th>Origen</th>
-                                        <th>URL</th>
-                                        <th>Acciones </th>	                                    
-										 
+	                                    <th>tipo dedicacion</th>
+                                        <th>Apellido</th>
+                                        <th>Nombre</th>
+                                        <th>categoria</th>
+                                        <th>horas</th>
+                                        <th>caracter</th>
+                                        <th>Desde</th>
+                                        <th>Hasta</th>
 	  
                                        </tr>
                                       </thead>
@@ -86,11 +91,15 @@
                     url: 'fetch.php'
                 },
                 columns: [
-                    { data: 'numero' },
-                    { data: 'fecha' },
-                    { data: 'nombre' },
-                    { data: 'enlace' },
-                    {data:'botones'},
+                    { data: 'nro_res' },
+                    { data: 'nombred' },
+                    { data: 'apellido' },
+                    {data:'nombre'},
+                    {data:'categoria'},
+                    {data:'horas'},
+                    {data:'caracter'},
+                    {data:'desde'},
+                    {data:'hasta'}
                    
                     ],       
                 "scrollX": true,

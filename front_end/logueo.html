@@ -1,38 +1,100 @@
 <html lang="en">
-  <head>
+
+<head>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="432533463136-lu2ut5v0gd95apbuq7gsjf0mogcd1b1i.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <body>
-   <form>
-   
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  
-</form>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-       
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-        if(profile.getEmail()!=''){
-            function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-     
-    });//then
-  } //signout
-   //  document.write("<table><tr><td> Correo </td><td>"+profile.getEmail()+"</td></tr><tr><td>Foto</td><td><image src='"+profile.getImageUrl()+"'></td></tr><tr><td></td></tr></table>");    
-      }//if
-      else {Document.write("Debe Registrar una cuenta google valida");}
-     location.href="/personaloran/front_end/usuario.html?correo="+profile.getmail()+"&&foto="+profile.getImageUrl();   
-    }
-    </script>
-  
+    <link rel="stylesheet" href="/personaloran/front_end/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,200;1,400&display=swap" rel="stylesheet">
+    <link rel=" preconnect " href=" https://fonts.googleapis.com ">
+    <link rel=" preconnect " href=" https://fonts.gstatic.com " crossorigin>
+    <link href=" https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap " rel=" stylesheet ">
+    <link rel=" preconnect " href=" https://fonts.googleapis.com ">
+    <link rel=" preconnect " href=" https://fonts.gstatic.com " crossorigin>
+    <link href=" https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap " rel=" stylesheet ">
+    <link rel=" preload " href=" css/estilos.css " as=" style ">
+    <link rel=" stylesheet " href=" /personaloran/front_end/css/estilos.css ">
+    <link rel=" stylesheet " href=" /personaloran/front_end/css/popup.css ">
 
-   
- </body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <style>
+        .contenedor {
+            border-radius: 100px;
+            width: 75%;
+        }
+        
+        .form-container {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            padding: 10%;
+            border-radius: 3rem;
+        }
+        
+        body {
+            background: Url("img/programando.jpg");
+            background-image: linear-gradient(to top, #11aa 0%, #ffffee 100%);
+        }
+        
+        @import url('css/fonts/Lobster-Regular.ttf');
+        h1 {
+            text-align: center;
+            color: white;
+            font-family: 'Lobster-Regular', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="contenedor">
+        <form action="../back_end/config/autorizar.php" method="POST" class="form-container">
+            <h1>Ingreso al Sistema</h1>
+            <div class="campo">
+                <label for="correo">Correo Electronico</label>
+                <input type="email" name="correo" placeholder="ejemplo@servidor.com">
+            </div>
+            <div class="campo">
+                <label for="clave">Clave</label>
+                <input type="password" name="clave">
+            </div>
+            <div class="alinear-derecha">
+                <button class=" boton " type="submit" class="btn-primary">Enviar</button>
+
+            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            <?php if($_GET["id"]==1) echo 'usuario no registrado';?>
+        </form>
+    </section>
+    <script>
+        function onSignIn(googleUser) {
+            // Useful data for your client-side scripts:
+            var profile = googleUser.getBasicProfile();
+
+            // The ID token you need to pass to your backend:
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+            if (profile.getEmail() != '') {
+                function signOut() {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function() {
+
+                    }); //then
+                } //signout
+                //  document.write("<table><tr><td> Correo </td><td>"+profile.getEmail()+"</td></tr><tr><td>Foto</td><td><image src='"+profile.getImageUrl()+"'></td></tr><tr><td></td></tr></table>");    
+            } //if
+            else {
+                Document.write("Debe Registrar una cuenta google valida");
+            }
+
+            location.href = "/personaloran/back_end/config/autorizar.php?correo=" + profile.getEmail() + "&&foto=" + profile.getImageUrl();
+        }
+    </script>
+
+
+
+</body>
+
 </html>

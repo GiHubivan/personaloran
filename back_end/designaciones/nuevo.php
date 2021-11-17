@@ -1,5 +1,5 @@
 <?php include '../config/conn.php';
-$consulta="select * from gobierno";
+$consulta="select * from docente";
 $result=pg_exec($con,$consulta);
 $filas=pg_num_rows($result);
 
@@ -19,25 +19,27 @@ $filas=pg_num_rows($result);
 
 <div class="container">
 <form id="formulario" role="form" action="agregar.php" method="POST">
-	<legend>Nueva Resolucion</legend>
+	<legend>Nueva Designacion</legend>
 	<div class="form-group">
 	<label for="numero">Número</label>
     <input type="text" name="numero" id="numero" class="form-control" pattern="[0-9]{2,4}/[0-9]{2,4}" required/>
-	<label for="fecha">Fecha</label>
+	<label for="fecha">Desde</label>
+    <input type="date" name="fecha" id="fecha" min="01/01/1971" max="12/11/2021"class="form-control"  required/>
+    <label for="fecha">Hasta</label>
     <input type="date" name="fecha" id="fecha" min="01/01/1971" max="12/11/2021"class="form-control"  required/>
 
-    <label for="origen">Origen</label>
+    <label for="docente">Docente</label>
     <select class=form-control name="origen" id="origen">
     <?php for ($i=0;$i<$filas;$i++){
     $row=pg_fetch_array($result);
 
           
-            echo '<option value="'.$row["id"].'">'.$row["nombre"].'</option>';}
+            echo '<option value="'.$row["legajo"].'">'.$row["apellido"].'</option>';}
             ?>
 
     </select>
-     <label for="url" >URL</label>
-    <input type="text" name="url" id="url" pattern="[h][t][t][p][:][/][/][a-z/.-]{2,64}[.][p][d][f]" class="form-control" placeholder="http://ejemplo.com" required>
+     <label for="resol" >Resol</label>
+    <input type="text" name="resol" id="reso" pattern="[h][t][t][p][:][/][/][a-z/.-]{2,64}[.][p][d][f]" class="form-control" placeholder="http://ejemplo.com" required>
 </div>
 	<button type="submit" class="btn btn-primary" id="alta">Guardar</button> 
 	<button type="button" class="btn btn-primary" id="actualizacion" Onclick="location.href='index.php'">Cancelar</button>
