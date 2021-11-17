@@ -4,15 +4,13 @@ include '../config/conn.php';
 
 
 
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $dni = $_POST['dni'];
-    $correo = $_POST['correo'];
-    $sexo=$_POST["sexo"];
-    $nace=$_POST["fecha"];
-
+    $numero = $_POST['numero'];
+    $fecha = $_POST['fecha'];
+    $origen = $_POST['origen'];
+    $url = $_POST['url'];
+    
    //echo $nombre.$dni.$apellido.$sexo.$correo.$nace;
-    $query = "select nueva_persona('$dni','$nombre','$apellido','$correo','$sexo','$nace')";
+    $query = "select nueva_resolucion('$numero','$fecha','$origen','$url')";
     $query_run = pg_exec($con, $query)or die('error:'.pg_last_error());
    $filas=pg_num_rows($query_run);
    if($filas>0)

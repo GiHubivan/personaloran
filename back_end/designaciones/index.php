@@ -35,27 +35,25 @@
                            
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        <h3 class="panel-title"><i class="icon-user"></i>Registro de Personas</h3> 
+                        <h3 class="panel-title"><i class="icon-user"></i>Registro de Designaciones</h3> 
 						 
                         </div>
 						
                         <div class="panel-body">
 							<div class="pull-right">
-								<a href="nuevo.php" class="btn btn-sm btn-primary">Nuevo</a>
+								<a href="nuevo.php" class="btn btn-sm btn-primary">Nueva</a>
 							</div><br>
 							<hr>
-                                    <table id="personas" class="table table-bordered table-hover">  
+                                    <table id="resoluciones" class="table table-bordered table-hover">  
 	                                   <thead>
                                         <tr>
 	  
-                                        <th>id</th>
-	                                    <th>Nombre </th>
-                                        <th>apellido </th>
-                                        <th>dni</th>
-                                        <th>Correo </th>	                                    
-										<th>Género</th>
-                                        <th>Nace</th>
-	                                    <th class="text-center"> Acciones </th> 
+                                        <th>numero de resolucion</th>
+	                                    <th></th>
+                                        <th>Origen</th>
+                                        <th>URL</th>
+                                        <th>Acciones </th>	                                    
+										 
 	  
                                        </tr>
                                       </thead>
@@ -77,24 +75,21 @@
         <!--/.wrapper--><br />
         <div class="footer span-12">
             <div class="container">
-          Registro de Datos Personales 
+          Registro de Resoluciones 
             </div>
         </div>
         <script>
         $(document).ready(function(){
-            var tabla = $('#personas').DataTable({
+            var tabla = $('#resoluciones').DataTable({
           
                 ajax: {
                     url: 'fetch.php'
                 },
                 columns: [
-                    { data: 'id_persona' },
+                    { data: 'numero' },
+                    { data: 'fecha' },
                     { data: 'nombre' },
-                    { data: 'apellido' },
-                    { data: 'dni' },
-                    { data: 'correo' },
-                    { data: 'sexo' },
-                    {data:'nace'},
+                    { data: 'enlace' },
                     {data:'botones'},
                    
                     ],       

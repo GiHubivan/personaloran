@@ -12,19 +12,16 @@
 
 <div class="container">
 <form id="formulario" role="form" action="agregar.php" method="POST">
-	<legend>Nuevo Registro de Personas</legend>
+	<legend>Nuevo Docente</legend>
 	<div class="form-group">
-	<label for="nombre">Nombre</label>
+    <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" class="form-control" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required/>
 	<label for="apellido">Apellidos</label>
     <input type="text" name="apellido" id="apellido" class="form-control" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required/>
-	
-    <div class="form-group">
-    <label for="dni">DNI</label>
-	<input  required="reuired" type="number" class="form-control" id="dni" name="dni" placeholder="Introduzca el dni">
-	
+	<label for="dni">DNI</label>
 
-    <label for="fecha">Fecha de Nacimiento</label>
+    <input  required="required" class="form-control" pattern="[1-5]{1}[0-9]{7}"  id="dni" name="dni" placeholder="Introduzca el dni">
+	  <label for="fecha">Fecha de Nacimiento</label>
 	<input type="date"  min="1945-01-01" max="2003-06-31" class="form-control" id="fecha" required="required" name="fecha" placeholder="Introduzca nombre de usuario">
 	
 
@@ -39,6 +36,16 @@
 
 	<input type="radio"  id="sexo" name="sexo" value="l" chequed="" selected="" required>LGBTQ+
 
+	<label for="titulo">Titulo</label>
+    <input type="text" name="titulo" id="titulo" class="form-control" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required/>
+	
+    
+    <label for="cuil">CUIL</label>
+	<input type="text" pattern="[0-9]{2}-[0-9]{8}-[0-9]{1}"  class="form-control" id="cuil" required="required" name="fecha" placeholder="Introduzca nombre de usuario">
+	
+
+	
+    
 </div>
 	<button type="submit" class="btn btn-primary" id="alta">Guardar</button> 
 	<button type="button" class="btn btn-primary" id="actualizacion" Onclick="location.href='index.php'">Cancelar</button>

@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 include '../config/conn.php';
 
 
-
+    $id=$_POST["id"];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $dni = $_POST['dni'];
@@ -11,16 +11,16 @@ include '../config/conn.php';
     $sexo=$_POST["sexo"];
     $nace=$_POST["fecha"];
 
-   //echo $nombre.$dni.$apellido.$sexo.$correo.$nace;
-    $query = "select nueva_persona('$dni','$nombre','$apellido','$correo','$sexo','$nace')";
+  // echo $nombre.$dni.$apellido.$sexo.$correo.$nace;
+    $query = "select actualiza_persona('$id','$nombre','$apellido','$dni','$correo','$sexo','$nace')";
     $query_run = pg_exec($con, $query)or die('error:'.pg_last_error());
    $filas=pg_num_rows($query_run);
    if($filas>0)
-   header("location:index.php?mensaje='datos guardados correctamente'");
+    $_SESSION["mensaje"]="Se actualizo bien";
+
    else {
-    header("location:index.php?mensaje='Algo Salió mal'");
-   }
+    $_SESSION["mensaje"]="Se actualizo bien";   }
 
-
+   header("location:index.php");
 
 ?>

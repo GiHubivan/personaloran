@@ -35,7 +35,7 @@
                            
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                        <h3 class="panel-title"><i class="icon-user"></i>Registro de Personas</h3> 
+                        <h3 class="panel-title"><i class="icon-user"></i>Registro de Docentes</h3> 
 						 
                         </div>
 						
@@ -44,17 +44,15 @@
 								<a href="nuevo.php" class="btn btn-sm btn-primary">Nuevo</a>
 							</div><br>
 							<hr>
-                                    <table id="personas" class="table table-bordered table-hover">  
+                                    <table id="docentes" class="table table-bordered table-hover">  
 	                                   <thead>
                                         <tr>
 	  
-                                        <th>id</th>
-	                                    <th>Nombre </th>
-                                        <th>apellido </th>
+                                        <th>legajo</th>
+	                                    <th>titulo </th>
                                         <th>dni</th>
-                                        <th>Correo </th>	                                    
-										<th>Género</th>
-                                        <th>Nace</th>
+                                        <th>Cuil </th>	                                    
+										<th>Situación de Revista</th>
 	                                    <th class="text-center"> Acciones </th> 
 	  
                                        </tr>
@@ -77,24 +75,22 @@
         <!--/.wrapper--><br />
         <div class="footer span-12">
             <div class="container">
-          Registro de Datos Personales 
+          Registro de Docentes
             </div>
         </div>
         <script>
         $(document).ready(function(){
-            var tabla = $('#personas').DataTable({
+            var tabla = $('#docentes').DataTable({
           
                 ajax: {
                     url: 'fetch.php'
                 },
                 columns: [
-                    { data: 'id_persona' },
-                    { data: 'nombre' },
-                    { data: 'apellido' },
+                    { data: 'legajo' },
+                    { data: 'titulo' },
                     { data: 'dni' },
-                    { data: 'correo' },
-                    { data: 'sexo' },
-                    {data:'nace'},
+                    { data: 'cuil' },
+                    { data: 'revista' },
                     {data:'botones'},
                    
                     ],       
@@ -106,7 +102,7 @@
             "info": "mostrando pagina _PAGE_ de _PAGES_",
             "infoEmpty": "No hay Registros",
             "infoFiltered": "(filtered from _MAX_ total records)",
-            "SEARCH":"Buscar"
+            "Next":"Siguiente"
         },
                     order: [3,'Asc']
                 });

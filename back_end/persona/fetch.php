@@ -20,7 +20,7 @@ for($i=0;$i<$totalData;$i++){
             break;
     }
     $row["botones"]=' <a href="#" class="badge btn-info viewbtn">VIEW</a>
-    <a href="#" class="badge btn-primary edit_btn">EDIT</a>
+    <a href="modificar.php?id='.$row["id_persona"].'&&nombre='.$row["nombre"].'&&apellido='.$row["apellido"].'&&dni='.$row["dni"].'&&correo='.$row["correo"].'&&sexo='.$row["sexo"].'&&nace='.$row["nace"].'" class="badge btn-primary edit_btn">EDIT</a>
     <a Onclick="elimina_persona('.$row['id_persona'].')" class="badge btn-danger">Delete</a>
 ';
     array_push($result_array,$row);
