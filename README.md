@@ -4,13 +4,13 @@ Es una aplicacion web diseñada para registrar y presentar información referent
 
 Entre las acciones que podrán realizarse se menciona:
 
-Carga de Resoluciones
+>Carga de Resoluciones
 
-Carga de Designaciones
+>Carga de Designaciones
 
-Carga de datos personales de los docentes
+>Carga de datos personales de los docentes
 
-Gestión de los diferentes cargos disponibles e historico de los mismos. 
+>Gestión de los diferentes cargos disponibles e historico de los mismos. 
 
  
 ## Requisitos e Instalación
